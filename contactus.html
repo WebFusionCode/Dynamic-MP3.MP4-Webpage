@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Fusion Contact</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-background {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            background-size: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            top: 42px;
+            left: 10px;
+            text-align: center;
+            color: white;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            border-radius: 15px;
+            width: 40%;
+            margin: 0px auto;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .content h1, .content p {
+            margin: 0;
+            padding: 20px;
+        }
+
+        .navbar {
+            position: absolute;
+            top: -50;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .navbar img {
+            width: 100px; /* Adjust the size as needed */
+            margin-bottom: 20px;
+            border-radius: 100px;
+            animation: glow 1.5s infinite alternate;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgb(70, 68, 68), 0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 20px #0ff;
+            }
+            100% {
+                box-shadow: 0 0 10px rgb(70, 68, 68), 0 0 15px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px #0ff;
+            }
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            
+        }
+
+        input, textarea {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid rgba(0, 0, 0, 0.774);
+        }
+
+        input:hover, textarea:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #0ff, 0 0 20px #0ff, 0 0 30px #0ff;
+        }
+
+        button {
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: rgb(0, 0, 0);
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.767);
+            transform: scale(1.05);
+            box-shadow: 0 0 10px rgb(129, 230, 255), 0 0 20px rgb(129, 230, 255), 0 0 30px rgb(129, 230, 255);
+            color: rgb(0,0,0);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .contact-info p {
+            margin: -30px 0;
+        }  
+        .area12{
+            text-align: left;
+        }
+        .a1{
+            color: white;
+        }
+        .a1:hover{
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="3129671-uhd_3840_2160_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="navbar">
+            <img class="log" src="FUSION.jpg" alt="Logo"><br><br>
+            <a href="HomeIndex.html">Home Page</a>
+            <a href="project.html">My Projects</a>
+            <a href="buy.html">Buy Projects</a>
+            <a href="notes.html">Notes</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="abus.html">About Us</a>
+        </div>
+        <div class="content">
+            <h2>Contact to Web Fusion!</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="text" name="subject" placeholder="Subject" required>
+                <textarea class="area12" name="message" rows="5" placeholder="Your Message" required minlength="10" maxlength="100"></textarea>
+                <div>
+                    <button type="submit">Submit</button>
+                    <button type="reset">Reset</button>
+                </div>
+            </form>
+            <div class="contact-info">
+                <p>Address: 1234 Web Fusion Street, Tech City, TC 56789</p>
+                <p>Phone: +91 7020100033</p>
+                <a class="a1" href="mailto: contact@webfusion.com"><p>Email: contact@webfusion.com</p></a> 
+            </div>
+        </div>
+    </div>
+    <audio autoplay loop>
+        <source src="" type="audio/mpeg">
+        Your browser does not support the audio tag.
+    </audio>
+</body>
+</html>

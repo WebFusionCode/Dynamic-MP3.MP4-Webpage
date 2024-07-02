@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collaborative Login & Signup Page</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-background {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            background-size: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 0px; /* Gap between login and signup boxes */
+        }
+
+        .form-box {
+            width: 350px;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.295); /* Transparent white background for blur effect */
+            backdrop-filter: blur(10px); /* Apply blur effect to background */
+            border-radius: 10px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin: 120px 30px;
+        }
+
+        .form-box h2 {
+            margin-bottom: 20px;
+            font-size: 26px;
+            color: #ffffff; /* Font color */
+            letter-spacing: 2px;
+        }
+
+        .user-box {
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .user-box input {
+            width: 100%;
+            padding: 10px 0;
+            background: none;
+            border: none;
+            border-bottom: 2px solid #fff; /* White border bottom */
+            color: #000000; /* Font color */
+            font-size: 18px;
+            outline: none;
+            transition: border-color 0.5s;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-start;
+            justify-content: center;
+            position: relative;
+        }
+
+        .user-box label {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            padding: 10px 20px;
+            pointer-events: none;
+            font-size: 18px;
+            color: #000000; /* Font color */
+            transition: 0.5s;
+            display: block;
+            width: 100%;
+            text-align: center;
+            box-sizing: border-box;
+        }
+
+        .user-box input:focus ~ label,
+        .user-box input:valid ~ label {
+            left: 120px; /* Adjust this value as needed */
+            font-size: 14px;
+            color: #ffffff; /* Adjusted font color */
+        }
+
+        .form-box button {
+            background: #00000073;
+            border: none;
+            color: #ffffff; /* Font color */
+            padding: 10px 20px;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes blink {
+            0%, 50%, 100% { opacity: 1; }
+            25%, 75% { opacity: 0; }
+        }
+
+        .form-box button:hover {
+            animation: blink 1s infinite;
+        }
+
+        .form-box a {
+            display: block;
+            margin-top: 20px;
+            color: #0f1c1c; /* Font color */
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .form-box a:hover {
+            color: #ffffff; /* Adjusted link hover color */
+            text-decoration: underline;
+        }
+
+        .toggle-box {
+            margin-top: 20px;
+            cursor: pointer;
+            color: #ffffff;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="18069166-uhd_3840_2160_24fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="container">
+            <div class="form-box" id="login-box">
+                <h2>Login to WebFusion</h2>
+                <form method="post" action="/login">
+                    <div class="user-box">
+                        <input type="text" name="username" required="">
+                        <label>Username</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="password" required="">
+                        <label>Password</label>
+                    </div>
+                    <button type="submit">
+                        Login
+                    </button>
+                </form>
+                <a href="#">Forgot Password?</a>
+                <div class="toggle-box" onclick="toggleForm()">Don't have an account? Sign Up</div>
+            </div>
+            <div class="form-box" id="signup-box" style="display:none;">
+                <h2>Sign Up to WebFusion</h2>
+                <form method="post" action="/signup">
+                    <div class="user-box">
+                        <input type="text" name="newusername" required="">
+                        <label>New Username</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="email" name="email" required="">
+                        <label>Email</label>
+                    </div>
+                    <div class="user-box">
+                        <input type="password" name="newpassword" required="">
+                        <label>New Password</label>
+                    </div>
+                    <button type="submit">
+                        Sign Up
+                    </button>
+                </form>
+                <div class="toggle-box" onclick="toggleForm()">Already have an account? Login</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

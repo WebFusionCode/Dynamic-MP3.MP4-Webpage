@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Fusion Projects</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        .video-background {
+            position: relative;
+            height: 100%;
+            width: 100%;
+        }
+
+        #bg-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            background-size: cover;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: white;
+        }
+
+        h1, p {
+            margin: 0;
+            padding: 20px;
+        }
+
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 20px;
+        }
+
+        .navbar img {
+            width: 100px; /* Adjust the size as needed */
+            margin-bottom: 20px;
+            border-radius: 100px;
+            animation: glow 1.5s infinite alternate;
+            transition: transform 0.3s ease;
+        }
+
+        .navbar img:hover {
+            transform: scale(1.1);
+        }
+
+        .navbar a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            text-align: center;
+            width: 100%;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .navbar a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white;
+        }
+
+        @keyframes glow {
+            0% {
+                box-shadow: 0 0 5px rgb(70, 68, 68), 0 0 10px rgb(255, 255, 255), 0 0 15px rgb(255, 255, 255), 0 0 20px #0ff;
+            }
+            100% {
+                box-shadow: 0 0 10px rgb(70, 68, 68), 0 0 15px rgb(255, 255, 255), 0 0 20px rgb(255, 255, 255), 0 0 30px #0ff;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop id="bg-video">
+            <source src="18069232-uhd_3840_2160_24fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>      
+        <div class="navbar">
+            <img class="log" src="FUSION.jpg" alt="Logo"><br><br>
+            <a href="HomeIndex.html">Home Page</a>
+            <a href="project.html">My Projects</a>
+            <a href="buy.html">Buy Projects</a>
+            <a href="notes.html">Notes</a>
+            <a href="contactus.html">Contact Us</a>
+            <a href="abus.html">About Us</a>
+        </div>
+        <div class="content">
+            <h1>Here is the Web Fusion Projects!</h1>
+            <p>Explore, Learn, and Innovate with My Projects.</p>
+        </div>
+    </div>
+</body>
+</html>

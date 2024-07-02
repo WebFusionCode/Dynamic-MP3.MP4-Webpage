@@ -1,0 +1,19 @@
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        // You can add your own authentication logic here
+        // For demonstration purposes, redirecting immediately after login
+        // Replace this with your actual authentication logic
+        let username = document.getElementById('username').value;
+        let password = document.getElementById('password').value;
+
+        // Simple validation, replace with your actual login logic
+        if (username === "CodeZone" && password === "Zone@0547") {
+            // Redirect to CodeZontes website
+            window.location.href = "Index.html"; // Replace with your website URL
+        } else {
+            alert("Invalid username or password. Please try again.");
+        }
+    });
+</script>
